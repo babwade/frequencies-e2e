@@ -1,6 +1,6 @@
 # frequencies-e2e
 
-Tests end to end du site Frequencies (préprod : https://frequencies-instance-prprod.web.app/).
+Tests end to end du site Frequencies
 
 Stack : Playwright (bibliothèque) + TypeScript + Cucumber, scénarios en **Gherkin français**. Le code reste en anglais.
 
@@ -41,7 +41,7 @@ Tags disponibles : `@smoke`, `@accueil`, `@contact`, `@audio`.
 
 | Variable | Défaut | Rôle |
 |----------|--------|------|
-| `BASE_URL` | URL de préprod | Site cible |
+| `BASE_URL` | URL | Site cible |
 | `BROWSER` | `chromium` | `chromium`, `firefox` ou `webkit` (seul Chromium est installé par défaut) |
 | `HEADLESS` | `true` | `false` pour voir le navigateur |
 | `DEFAULT_TIMEOUT` | `10000` | Délai (ms) des actions et vérifications. Navigation : x3. Step Cucumber : x6 |
@@ -120,9 +120,9 @@ L'état du lecteur est lu sur l'élément `<audio>` (`paused`, `currentTime`) : 
 - **Éléments en doublon** : le site duplique des blocs cachés pour le responsive. Les locators filtrent sur `visible` et, si deux éléments visibles correspondent, Playwright lève une erreur qui les liste : restreindre le locator à son conteneur (menu, pied de page...).
 - **Pas de `networkidle`** : le flux audio et GTM maintiennent du réseau actif. La navigation attend `main` visible et un titre non vide.
 - **Pas de `sleep`** : les vérifications se réessayent automatiquement jusqu'à `DEFAULT_TIMEOUT`.
-- **Formulaire de contact** : le bouton d'envoi reste désactivé en automatisation (protection anti-robot) et on n'envoie jamais de message réel en préprod. Les scénarios vérifient l'affichage, les contraintes et la saisie.
+- **Formulaire de contact** : le bouton d'envoi reste désactivé en automatisation (protection anti-robot) et on n'envoie jamais de message réel. Les scénarios vérifient l'affichage, les contraintes et la saisie.
 - **Bandeau cookies (CookieFirst)** : il apparaît après le chargement. Le step `je refuse les cookies sur la bannière` l'attend 5 s et continue s'il est absent.
-- **Dépendance au contenu** : les libellés du menu et la piste du lecteur viennent de la préprod. Un changement éditorial peut faire échouer un test sans qu'il y ait de régression.
+- **Dépendance au contenu** : les libellés du menu et la piste du lecteur. Un changement éditorial peut faire échouer un test sans qu'il y ait de régression.
 
 ## Ajouter une page ou un composant
 
