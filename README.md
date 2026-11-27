@@ -1,6 +1,6 @@
 # frequencies-e2e
 
-Tests end to end du site [Frequencies](https://frequencies-instance-prprod.web.app/) (préprod).
+Tests end to end du site [Frequencies](https://frequencies-instance-prprod.web.app/).
 
 Stack : Playwright + TypeScript + Cucumber. Les scénarios sont écrits en Gherkin français, le code reste en anglais.
 
@@ -47,7 +47,7 @@ Les variables se définissent dans `.env` :
 
 | Variable | Défaut | Rôle |
 |----------|--------|------|
-| `BASE_URL` | URL de préprod | Site testé |
+| `BASE_URL` | URL du site Frequencies | Site testé |
 | `BROWSER` | `chromium` | `chromium`, `firefox` ou `webkit` |
 | `HEADLESS` | `true` | `false` pour voir le navigateur |
 | `DEFAULT_TIMEOUT` | `10000` | Délai maximal des actions, en ms |
