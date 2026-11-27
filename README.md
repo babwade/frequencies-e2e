@@ -1,6 +1,6 @@
 # frequencies-e2e
 
-Tests end to end du site [Frequencies](https://frequencies-instance-prprod.web.app/).
+Tests end to end du site Frequencies.
 
 Stack : Playwright + TypeScript + Cucumber. Les scénarios sont écrits en Gherkin français, le code reste en anglais.
 
