@@ -34,7 +34,7 @@ function readNumber(name: string, fallback: number): number {
 }
 
 export const config = {
-  baseUrl: (process.env.BASE_URL ?? 'https://frequencies-instance-prprod.web.app').replace(
+  baseUrl: (process.env.BASE_URL ?? 'https://frequencies-instance-dev.web.app').replace(
     /\/+$/,
     '',
   ),
