@@ -1,0 +1,31 @@
+{
+  "name": "frequencies-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tests end to end du site Frequencies (Playwright + TypeScript + Cucumber en francais)",
+  "scripts": {
+    "test": "cucumber-js",
+    "test:smoke": "cucumber-js --tags \"@smoke\"",
+    "test:headed": "cross-env HEADLESS=false cucumber-js",
+    "test:tag": "cucumber-js --tags",
+    "test:tag:headed": "cross-env HEADLESS=false cucumber-js --tags",
+    "test:dry-run": "cucumber-js --dry-run",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.ts\" cucumber.js",
+    "install:browsers": "playwright install chromium"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^13.3.0",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^24.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^18.0.10",
+    "playwright": "^1.65.1",
+    "prettier": "^3.10.1",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  }
+}
