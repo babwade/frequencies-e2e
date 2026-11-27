@@ -53,6 +53,22 @@ Les variables se définissent dans `.env` :
 | `DEFAULT_TIMEOUT` | `10000` | Délai maximal des actions, en ms |
 | `SLOW_MO` | `0` | Ralentit chaque action, en ms |
 
+### Plusieurs environnements
+
+Pour cibler un autre environnement, créer un fichier `.env.<nom>` (par exemple `.env.rec`, ignoré par Git) et choisir le nom avec `TEST_ENV` :
+
+```bash
+# .env.rec
+BASE_URL=https://mon-site-recette.example.com
+```
+
+```bash
+TEST_ENV=rec npm test                  # Git Bash, macOS, Linux
+npx cross-env TEST_ENV=rec npm test    # Windows, tous shells
+```
+
+Ordre de priorité, du plus fort au plus faible : variable du shell, `.env.<nom>`, `.env`, valeur par défaut. Une variable absente de `.env.<nom>` est donc reprise dans `.env`. Si le fichier demandé n'existe pas, le lancement s'arrête avec une erreur.
+
 ## Structure
 
 ```
