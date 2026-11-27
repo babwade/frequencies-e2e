@@ -3,3 +3,6 @@ reports/
 test-results/
 .env
 *.log
+
+.env.*
+!.env.example

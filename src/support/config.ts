@@ -1,6 +1,13 @@
+import { existsSync } from 'node:fs';
 import dotenv from 'dotenv';
 
-dotenv.config({ quiet: true });
+// TEST_ENV=rec charge .env.rec puis .env : une variable deja definie n'est jamais ecrasee.
+const testEnv = process.env.TEST_ENV;
+const envFile = testEnv ? `.env.${testEnv}` : undefined;
+if (envFile && !existsSync(envFile)) {
+  throw new Error(`TEST_ENV "${testEnv}" : fichier ${envFile} introuvable`);
+}
+dotenv.config({ path: envFile ? [envFile, '.env'] : '.env', quiet: true });
 
 export type BrowserName = 'chromium' | 'firefox' | 'webkit';
 
